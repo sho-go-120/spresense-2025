@@ -1,0 +1,145 @@
+/* =========================
+   リセット
+========================= */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* =========================
+   全体
+========================= */
+.gallery-body {
+  min-height: 100vh;
+  background: linear-gradient(
+    180deg,
+    #020617,
+    #0f172a
+  );
+  display: flex;
+  justify-content: center;
+  font-family: "M PLUS 1", sans-serif;
+  color: #e5e7eb;
+}
+
+/* =========================
+   ラッパー
+========================= */
+.gallery-wrapper {
+  width: 100%;
+  max-width: 780px;
+  padding: 24px 14px 48px;
+}
+
+/* =========================
+   タイトル
+========================= */
+.gallery-title {
+  font-family: 'DotGothic16', monospace;
+  font-size: 72px;
+  letter-spacing: 0.14em;
+  text-align: center;
+  color: #f9fafb;
+  margin-bottom: 8px;
+}
+
+.gallery-subtitle {
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: #cbd5f5; /* 白すぎない */
+  text-align: center;
+  letter-spacing: 0.05em;
+  margin-bottom: 36px;
+}
+
+/* =========================
+   一覧
+========================= */
+.gallery-list {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+/* =========================
+   カード
+========================= */
+.gallery-card {
+  position: relative;
+  background: #111827;
+  border-radius: 22px;
+  padding: 16px;
+  box-shadow:
+    0 12px 32px rgba(0, 0, 0, 0.6),
+    0 0 18px rgba(251, 113, 133, 0.25),
+    0 0 22px rgba(167, 139, 250, 0.25);
+}
+
+/* 外縁グラデーション */
+.gallery-card::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 28px;
+  background: linear-gradient(
+    135deg,
+    #fb7185,   /* 明るい赤（rose-400） */
+    #a78bfa    /* 明るい紫（violet-400） */
+  );
+  z-index: -1;
+  opacity: 0.9;
+
+  /* ここがポイント：発光感 */
+  filter: blur(0.5px);
+}
+/* =========================
+   画像
+========================= */
+.gallery-card img {
+  width: 100%;
+  border-radius: 16px;
+  display: block;
+  filter: contrast(1.05) saturate(1.05);
+}
+
+/* =========================
+   ホバー（控えめ）
+========================= */
+.gallery-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.8);
+}
+
+.gallery-card:hover::before {
+  opacity: 0.9;
+}
+
+/* =========================
+   ファイル名
+========================= */
+.gallery-filename {
+  margin-top: 12px;
+  font-size: 12px;
+  color: #9ca3af;
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+
+/* =========================
+   レスポンシブ
+========================= */
+@media (max-width: 480px) {
+  .gallery-wrapper {
+    padding: 16px 10px 32px;
+  }
+
+  .gallery-title {
+    font-size: 22px;
+  }
+
+  .gallery-subtitle {
+    font-size: 14px;
+  }
+}

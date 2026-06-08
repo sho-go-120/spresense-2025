@@ -1,0 +1,8 @@
+# macOS
+.DS_Store
+
+# Python virtual environment
+server/venv/
+
+# VSCode workspace
+*.code-workspace
